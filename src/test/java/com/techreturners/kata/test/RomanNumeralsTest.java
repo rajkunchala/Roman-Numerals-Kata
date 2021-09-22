@@ -7,16 +7,37 @@ import static org.junit.Assert.assertEquals;
 public class RomanNumeralsTest {
 
     @Test
-    public void checkRomanNumeralForNumberUnderTen(){
+
+    public void checkRomanLiteralForNumberBelowTen(){
         //Arrange
         RomanNumerals roman = new RomanNumerals();
-
         //Act
-        String romanLiteral = roman.getRomanLiteralForNumber(10);
-
+        String result = roman.getRomanLiteral(5);
         //Assert
-        assertEquals("Failure - the strings are not equal","X",romanLiteral);
-
-
+        assertEquals("V", result);
     }
+
+    @Test
+
+    public void checkRomanLiteralForNumberBelowHundred(){
+
+        RomanNumerals roman = new RomanNumerals();
+        String result = roman.getRomanLiteral(55);
+        assertEquals("LV", result);
+    }
+    public void checkRomanLiteralForNumberBelowThousand(){
+
+        RomanNumerals roman = new RomanNumerals();
+        String result = roman.getRomanLiteral(550);
+        assertEquals("DL", result);
+    }
+
+    @Test
+    public void checkRomanLiteralForNumberInThousands(){
+
+        RomanNumerals roman = new RomanNumerals();
+        String result = roman.getRomanLiteral(2650);
+        assertEquals("MMDCL", result);
+    }
+
 }
