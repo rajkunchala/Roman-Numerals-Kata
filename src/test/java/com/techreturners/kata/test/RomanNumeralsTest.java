@@ -7,7 +7,6 @@ import static org.junit.Assert.assertEquals;
 public class RomanNumeralsTest {
 
     @Test
-
     public void checkRomanLiteralForNumberBelowTen(){
         //Arrange
         RomanNumerals roman = new RomanNumerals();
@@ -18,7 +17,6 @@ public class RomanNumeralsTest {
     }
 
     @Test
-
     public void checkRomanLiteralForNumberBelowHundred(){
 
         RomanNumerals roman = new RomanNumerals();
