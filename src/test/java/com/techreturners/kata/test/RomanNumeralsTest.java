@@ -1,15 +1,24 @@
 package com.techreturners.kata.test;
 import com.techreturners.kata.RomanNumerals;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class RomanNumeralsTest {
 
+    private RomanNumerals roman;
+    @Before
+    public void setUpTests(){
+
+        roman = new RomanNumerals();
+    }
+
+
     @Test
     public void checkRomanLiteralForNumberBelowTen(){
         //Arrange
-        RomanNumerals roman = new RomanNumerals();
+
         //Act
         String result = roman.getRomanLiteral(5);
         //Assert
@@ -19,13 +28,13 @@ public class RomanNumeralsTest {
     @Test
     public void checkRomanLiteralForNumberBelowHundred(){
 
-        RomanNumerals roman = new RomanNumerals();
         String result = roman.getRomanLiteral(55);
         assertEquals("LV", result);
     }
+
+    @Test
     public void checkRomanLiteralForNumberBelowThousand(){
 
-        RomanNumerals roman = new RomanNumerals();
         String result = roman.getRomanLiteral(550);
         assertEquals("DL", result);
     }
@@ -33,9 +42,15 @@ public class RomanNumeralsTest {
     @Test
     public void checkRomanLiteralForNumberInThousands(){
 
-        RomanNumerals roman = new RomanNumerals();
         String result = roman.getRomanLiteral(2650);
         assertEquals("MMDCL", result);
+    }
+
+    @Test
+    public void checkRomanLiteralForNumberGreaterThan3000(){
+
+        String expected = "input number should not be greater than 3000";
+        assertEquals(expected, roman.getRomanLiteral(4000));
     }
 
 }

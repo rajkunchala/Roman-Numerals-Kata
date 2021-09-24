@@ -5,6 +5,14 @@ public class RomanNumerals {
     public String getRomanLiteral(int number) {
 
         //Validate the input for under 3000 and throw an exception
+        if (number > 3000){
+            try {
+                throw new Exception("input number should not be greater than 3000");
+
+            } catch (Exception e){
+                    return e.getMessage();
+            }
+        }
 
         String[] onesArray = {"","I","II","III","IV","V","VI","VII","VIII","IX"};
         String[] tensArray = {"","X","XX","XXX","XL","L","LX","LXX","LXXX","XC"};
