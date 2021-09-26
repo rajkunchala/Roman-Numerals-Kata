@@ -14,6 +14,7 @@ public class RomanNumerals {
             }
         }
 
+        //set up the reference lists for Roman Literals
         String[] onesArray = {"","I","II","III","IV","V","VI","VII","VIII","IX"};
         String[] tensArray = {"","X","XX","XXX","XL","L","LX","LXX","LXXX","XC"};
         String[] hundredsArray = {"","C","CC","CCC","CD","D","DC","DCC","DCCC","CM"};
@@ -34,7 +35,6 @@ public class RomanNumerals {
         result +=hundredsArray[(number/100)%10];
         result +=tensArray[(number/10)%10];
         result += onesArray[number%10];
-
 
         return result;
     }
