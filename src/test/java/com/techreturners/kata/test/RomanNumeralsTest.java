@@ -53,4 +53,17 @@ public class RomanNumeralsTest {
         assertEquals(expected, roman.getRomanLiteral(4000));
     }
 
+    @Test
+    public void checkRomanLiteralForNumberEqualTo3000(){
+
+        String expected = "MMM";
+        assertEquals(expected, roman.getRomanLiteral(3000));
+    }
+
+    @Test
+    public void checkRomanLiteralForNumberEqualTo3001(){
+
+        String expected = "input number should not be greater than 3000";
+        assertEquals(expected, roman.getRomanLiteral(3001));
+    }
 }
